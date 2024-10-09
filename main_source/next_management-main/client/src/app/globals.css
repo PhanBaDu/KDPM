@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.app {
+    height: 100%;
+    width: 100%;
+    @apply text-sm;
+    @apply bg-white;
+    @apply dark:bg-black;
+}
+
+/* TIMELINE STYLING */
+.timeline ._3_ygE {
+    @apply dark:border-stroke-dark rounded-tl-md border border-r-0 border-[#e6e4e4];
+}
+.timeline ._2eZzQ {
+    @apply dark:border-stroke-dark border-[#e6e4e4];
+}
+.timeline ._2dZTy {
+    @apply dark:fill-dark-secondary fill-white;
+}
+.timeline ._2dZTy:nth-child(even) {
+    @apply dark:fill-dark-tertiary fill-[#f5f5f5];
+}
+.timeline ._35nLX {
+    @apply dark:fill-dark-secondary dark:stroke-stroke-dark fill-white stroke-[#e6e4e4];
+}
+.timeline ._9w8d5 {
+    @apply fill-[#333] dark:fill-white;
+}
+.timeline ._34SS0 {
+    @apply dark:bg-dark-secondary bg-white;
+}
+.timeline ._34SS0:nth-of-type(even) {
+    @apply dark:bg-dark-tertiary bg-[#f5f5f5];
+}
+.timeline ._RuwuK,
+.timeline ._3rUKi,
+.timeline ._1rLuZ {
+    @apply dark:stroke-stroke-dark stroke-[#e6e4e4];
+}
+.timeline ._3ZbQT {
+    @apply dark:border-stroke-dark border-l-0 border-[#e6e4e4];
+}
+.timeline ._3T42e {
+    @apply dark:bg-dark-bg bg-white;
+}
+.timeline ._29NTg {
+    @apply dark:text-neutral-500;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
