@@ -14,17 +14,18 @@ export const getProjects = async (req: Request, res: Response): Promise<void> =>
 
 export const createProject = async (req: Request, res: Response): Promise<void> => {
     const { name, description, startDate, endDate } = req.body;
-    try {   
-        if (name.length < 4 || description.length < 4) {
-            res.status(403).json({ message: "Please enter all information with length > 3" })
-            return;
-        }
 
-        if (startDate > endDate) {
-            res.status(403).json({ message: "Start date must be less than deadline" })
-            return;
-        }
-        
+    if (name.length < 4 || description.length < 4) {
+        res.status(403).json({ message: "Please enter all information with length > 3" })
+        return;
+    }
+
+    if (startDate > endDate) {
+        res.status(403).json({ message: "Start date must be less than deadline" })
+        return;
+    }
+    
+    try {   
         const existingProject = await prisma.project.findFirst({
             where: {
                 name: {
@@ -36,7 +37,7 @@ export const createProject = async (req: Request, res: Response): Promise<void> 
         
         if (existingProject) {
             res.status(403).json({ message: "This project name already exists"});
-            return
+            return;
         }
 
         const newProject = await prisma.project.create({

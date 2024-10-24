@@ -54,7 +54,6 @@ const ModalNewTask = ({ isOpen, onClose, id = null }: Props) => {
             setListUsername([]);
             setAssignedId(undefined);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [assignedUserId]);
 
     const handleSubmit = async () => {
